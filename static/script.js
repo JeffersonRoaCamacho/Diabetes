@@ -1,4 +1,8 @@
 
+// ── URL del backend ───────────────────────────────────────────────
+const API_URL = 'https://diabetes-5yps.onrender.com/';
+
+
 // ── Mapeo de clases → nombre en español ───────────────────────────
 const CROP_LABELS = {
     0: 'Manzana', 1: 'Plátano', 2: 'Frijol negro', 3: 'Garbanzo',
