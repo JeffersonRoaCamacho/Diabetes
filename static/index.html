@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Deploy - Jefferson Roa Camacho </title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap"
+    rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="badge"><span></span> ML deploy </div>
+      <h1>Predicción para Cultivos</h1>
+      <p class="subtitle">// Ingresa las características · Elige el modelo · Predice</p>
+    </header>
+
+    <!-- Card -->
+    <div class="card">
+
+      <!-- Model selector -->
+      <p class="section-label">01 — Selecciona el modelo</p>
+      <div class="model-selector">
+        <label class="model-btn svm active" id="btn-svm">
+          <input type="radio" name="model" value="svm" checked />
+          <div class="model-indicator"></div>
+          <span class="model-icon">⚡</span>
+          <span class="model-name">Support Vector Machine</span>
+          <span class="model-desc">SVM · Kernel Lineal</span>
+        </label>
+        <label class="model-btn rf" id="btn-rf">
+          <input type="radio" name="model" value="random_forest" />
+          <div class="model-indicator"></div>
+          <span class="model-icon">🌲</span>
+          <span class="model-name">Random Forest</span>
+          <span class="model-desc">RF · Ensemble</span>
+        </label>
+      </div>
+
+      <!-- Features -->
+      <p class="section-label">02 — Valores de las características</p>
+      <div class="features-grid" id="features-grid">
+        <!-- Se generan dinámicamente -->
+      </div>
+
+      <!-- Predict -->
+      <button class="btn-predict" id="btn-predict">
+        <span class="btn-content">
+          <span class="spinner" id="spinner"></span>
+          <span id="btn-label">Ejecutar Predicción →</span>
+        </span>
+      </button>
+
+      <!-- Result -->
+      <div id="result-panel">
+        <p class="result-label">Resultado</p>
+        <p class="result-class" id="result-class">—</p>
+        <p class="result-meta" id="result-meta"></p>
+      </div>
+
+    </div>
+
+    <footer>Jefferson Roa camacho</footer>
+  </div>
+
+  <script src="script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

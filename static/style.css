@@ -1,0 +1,330 @@
+:root {
+  --bg-body: #f4f7f6;
+  --card-bg: #ffffff;
+  --primary: #2b7a0b;
+  --primary-hover: #1f5c08;
+  --secondary: #5bb318;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --success-bg: #f0fdf4;
+  --success-text: #166534;
+  --success-border: #bbf7d0;
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --error-border: #fecaca;
+  --shadow: 0 10px 25px rgba(43, 122, 11, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+/* --- Encabezado --- */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(91, 179, 24, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(91, 179, 24, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(91, 179, 24, 0); }
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* --- Tarjeta Principal --- */
+.main-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: var(--shadow);
+}
+
+.section-block {
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--border);
+  margin: 25px 0;
+}
+
+/* --- Selector de Modelos --- */
+.model-options {
+  display: flex;
+  gap: 15px;
+}
+
+.model-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.model-option input[type="radio"] {
+  display: none;
+}
+
+.model-option .icon {
+  font-size: 24px;
+  background: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.model-option .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.model-option .name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+.model-option .detail {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.model-option.active {
+  border-color: var(--primary);
+  background: rgba(43, 122, 11, 0.04);
+}
+
+.model-option.active .icon {
+  background: var(--primary);
+}
+
+/* --- Inputs de Características --- */
+.inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.input-group input {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(91, 179, 24, 0.15);
+}
+
+.input-group input::placeholder {
+  color: #a0aec0;
+}
+
+/* --- Botón de Predicción --- */
+.action-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  box-shadow: 0 6px 15px rgba(43, 122, 11, 0.2);
+}
+
+.action-btn:hover {
+  background: var(--primary-hover);
+}
+
+.action-btn:active {
+  transform: scale(0.98);
+}
+
+.action-btn:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* --- NUEVO SPINNER (3 puntos saltarines) --- */
+.loader {
+  display: none;
+  width: 30px;
+  height: 10px;
+  background: 
+    radial-gradient(circle closest-side, #ffffff 90%, transparent) 0% 50%,
+    radial-gradient(circle closest-side, #ffffff 90%, transparent) 50% 50%,
+    radial-gradient(circle closest-side, #ffffff 90%, transparent) 100% 50%;
+  background-size: calc(100%/3) 100%;
+  background-repeat: no-repeat;
+  animation: bounce-dots 1s infinite linear;
+}
+
+@keyframes bounce-dots {
+  33% { background-size: calc(100%/3) 0%  , calc(100%/3) 100%, calc(100%/3) 100%; }
+  50% { background-size: calc(100%/3) 100%, calc(100%/3) 0%  , calc(100%/3) 100%; }
+  66% { background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%; }
+}
+
+/* --- Panel de Resultados --- */
+.result-panel {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  animation: slideDown 0.4s ease-out;
+}
+
+.result-panel.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-header {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.result-details {
+  font-size: 13px;
+}
+
+/* Clases dinámicas inyectadas por JS */
+.success {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
+}
+
+.error {
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
