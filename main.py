@@ -13,7 +13,7 @@ app.include_router(webRouter.router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "             ",
+        "https://diabetes-frontend-tbui.onrender.com",
     ],
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
